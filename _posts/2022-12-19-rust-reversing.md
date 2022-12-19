@@ -130,7 +130,7 @@ def chop_veggies_rev(x,quant):
 part2 = chopping_veggies_rev()
 ```
 
-The third part is the easiest, the ascii va    ![14.png](/assets/img/20221219/5p4gh3tt1/14.png)lues of characters of last 10 characters are substituted with a special character, and the resulting string is reversed.
+The third part is the easiest, the ascii values of characters of last 10 characters are substituted with a special character, and the resulting string is reversed.
     ![11.png](/assets/img/20221219/5p4gh3tt1/11.png)
     ![14.png](/assets/img/20221219/5p4gh3tt1/14.png)
 
