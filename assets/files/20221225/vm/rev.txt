@@ -1,0 +1,265 @@
+
+v124 = r;
+v125 = mem;
+v126 = cflag;
+v127 = pc;
+
+if ( mem.data_ptr[pc] < 0x10u || mem.data_ptr[pc] > 0x17u )
+{
+  if ( mem.data_ptr[pc] < 0x18u || mem.data_ptr[pc] > 0x1Fu )
+  {
+    if ( mem.data_ptr[pc] < 0x20u || mem.data_ptr[pc] > 0x27u )
+    {
+      opcode = mem.data_ptr[pc];
+      switch ( opcode )
+      {
+        case 0x80u:
+          pc_1+ = pc + 1;
+          v75 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[pc_1+]) << 8;
+          v74 = pc + 2;
+
+          v32 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v74]);
+
+          for ( i = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h6d2b6e31b499c834(v32 + v75); ; ++i )
+          {
+
+            if ( !mem.data_ptr[i] )
+              break;
+
+            v112 = mem.data_ptr[i];
+            v111 = (core::fmt::ArgumentV1 *)&v112;
+            v137 = &v112;
+            v110.data_ptr = core::fmt::ArgumentV1::new::h823ce5c1eebbf62a(
+                              (core::fmt::ArgumentV1 *)&v112,
+                              (unsigned __int8 *)_$LT$char$u20$as$u20$core..fmt..Display$GT$::fmt::h3396e335da54c0ab,
+                              v33);
+            v110.length = v35;
+            core::fmt::Arguments::new_v1::h693bcb52bf87221d(
+              &v109,
+              (___str_)__PAIR128__(1LL, &stru_52AF8),
+              (__core::fmt::ArgumentV1_)__PAIR128__(1LL, &v110));
+            std::io::stdio::_print::ha4dc08e31d2d03f1(*(core::fmt::Arguments *)v55);
+
+          }
+          core::fmt::Arguments::new_v1::h693bcb52bf87221d(
+            &v113,
+            (___str_)__PAIR128__(1LL, &stru_52A40),
+            (__core::fmt::ArgumentV1_)(unsigned __int64)&::args);
+          std::io::stdio::_print::ha4dc08e31d2d03f1(*(core::fmt::Arguments *)v55);
+          
+
+          return pc + 3;
+        case 0x81:
+          v81 = pc + 1;
+
+          v79 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v81]) << 8;
+          v78 = pc + 2;
+
+          v24 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v78]);
+
+          v77 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h6d2b6e31b499c834(v24 + v79);
+          v136 = v77;
+          v115.inner = std::io::stdio::stdin::h4b68782469c9c5b8().inner;
+
+          self = v77;
+          v117.start = v77 + 256;
+          buf = core::slice::index::_$LT$impl$u20$core..ops..index..IndexMut$LT$I$GT$$u20$for$u20$$u5b$T$u5d$$GT$::index_mut::h799b3ce6347592f5(
+                  (_mut__u8_ *)mem.data_ptr,
+                  (_mut__u8_)__PAIR128__(v77, mem.length),
+                  (core::ops::range::Range<usize>)__PAIR128__(&index, v77 + 256));
+          v28.length = v27;
+          v28.data_ptr = (u8 *)buf;
+          _$LT$std..io..stdio..Stdin$u20$as$u20$std..io..Read$GT$::read::h6951be231918ff0e(&v114, &v115, v28);
+          core::result::Result$LT$T$C$E$GT$::unwrap::hd0fb28beda6227b3(*(core::result::Result<usize,std::io::error::Error> *)v55);
+          core::fmt::Arguments::new_v1::h693bcb52bf87221d(
+            (core::fmt::Arguments *)&v117.end,
+            (___str_)__PAIR128__(1LL, &stru_52A40),
+            (__core::fmt::ArgumentV1_)(unsigned __int64)&::args);
+          std::io::stdio::_print::ha4dc08e31d2d03f1(*(core::fmt::Arguments *)v55);
+          
+          return pc + 3;
+        
+        case 0x90:
+
+          return pc + 1;
+        default:
+          if ( opcode )
+          {
+            switch ( opcode )
+            {
+              case '0':
+                v88 = pc + 1;
+                v58 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6((unsigned __int8)(mem.data_ptr[v88] & 0xF0) >> 4);
+                v147 = v58;
+                v57 = pc + 1;
+
+                v56 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem.data_ptr[v57] & 0xF);
+                v148 = v56;
+
+                r.data_ptr[v58] = r.data_ptr[v56];
+
+                return pc + 2;
+              case '1':
+                v87 = pc + 1;
+
+                v61 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6((unsigned __int8)(mem.data_ptr[v87] & 0xF0) >> 4);
+                v145 = v61;
+                v60 = pc + 1;
+
+                v59 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem.data_ptr[v60] & 0xF);
+                v146 = v59;
+
+                r.data_ptr[v61] = ~(r.data_ptr[v59] & r.data_ptr[v61]);
+
+                return pc + 2;
+              case '2':
+                v86 = pc + 1;
+
+
+                v64 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6((unsigned __int8)(mem.data_ptr[v86] & 0xF0) >> 4);
+                v143 = v64;
+                v63 = pc + 1;
+
+                v62 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem.data_ptr[v63] & 0xF);
+                v144 = v62;
+
+                if ( r.data_ptr[v64] == r.data_ptr[v62] )
+                  *cflag = 1;
+
+                return pc + 2;
+              case '@':
+                v85 = pc + 1;
+
+                v67 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6((unsigned __int8)(mem.data_ptr[v85] & 0xF0) >> 4);
+                v141 = v67;
+                v66 = pc + 1;
+
+                v65 = mem.data_ptr[v66] & 0xF;
+                v142 = v65;
+
+                r.data_ptr[v67] >>= v65 & 7;
+
+                return pc + 2;
+              case 'A':
+                v84 = pc + 1;
+
+                v70 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6((unsigned __int8)(mem.data_ptr[v84] & 0xF0) >> 4);
+                v139 = v70;
+                v69 = pc + 1;
+
+                v68 = mem.data_ptr[v69] & 0xF;
+                v140 = v68;
+
+                r.data_ptr[v70] <<= v68 & 7;
+
+                return pc + 2;
+              case 'P':
+                v83 = pc + 1;
+
+
+                v73 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v83]) << 8;
+                v72 = pc + 2;
+
+                v40 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v72]);
+
+                v71 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h6d2b6e31b499c834(v40 + v73);
+                v138 = v71;
+                
+                
+                if ( *cflag )
+                {
+                  *cflag = 0;
+                  return pc + 3;
+                }
+                else
+                {
+                  return v71;
+                }
+              default:
+
+                f = pc + 1;
+
+                v122 = (core::fmt::ArgumentV1 *)&mem.data_ptr[pc];
+                v123 = &mem.data_ptr[f];
+                v134 = &mem.data_ptr[pc];
+                v135 = &mem.data_ptr[f];
+                args.data_ptr = core::fmt::ArgumentV1::new::h85db88ffa578b88c(
+                                  (core::fmt::ArgumentV1 *)&mem.data_ptr[pc],
+                                  (u8 *)core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$u8$GT$::fmt::h49de737fb0714c5f,
+                                  (core::result::Result (*)(u8 *, core::fmt::Formatter *))f);
+                args.length = (usize)v19;
+                v120 = core::fmt::ArgumentV1::new::h85db88ffa578b88c(
+                          (core::fmt::ArgumentV1 *)&mem.data_ptr[f],
+                          (u8 *)core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$u8$GT$::fmt::h49de737fb0714c5f,
+                          v19);
+                v121 = v20;
+                core::fmt::Arguments::new_v1::h693bcb52bf87221d(
+                  &v118,
+                  (___str_)__PAIR128__(3LL, &pieces),
+                  (__core::fmt::ArgumentV1_)__PAIR128__(2LL, &args));
+                std::io::stdio::_print::ha4dc08e31d2d03f1(*(core::fmt::Arguments *)v55);
+                return 0LL;
+            }
+          }
+          else
+          {
+            return 0LL;
+          }
+      }
+    }
+    else
+    {
+      v93 = pc + 1;
+
+      v92 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v93]) << 8;
+      v91 = pc + 2;
+
+      v15 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v91]);
+
+      v90 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h6d2b6e31b499c834(v15 + v92);
+      v132 = v90;
+
+      v89 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem.data_ptr[pc] & 0xF);
+      v133 = v89;
+
+      mem.data_ptr[v90] = r.data_ptr[v89];
+
+      return pc + 3;
+    }
+  }
+  else
+  {
+
+    mem_pc = _$LT$T$u20$as$u20$core..convert..From$LT$T$GT$$GT$::from::h90feaeb3bf55ec05(mem.data_ptr[pc]);
+    mem_pc_3bit = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem_pc & 7);
+    v99 = mem_pc_3bit;
+    v130 = mem_pc_3bit;
+    v98 = pc + 1;
+
+    v97 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v98]) << 8;
+    v96 = pc + 2;
+
+
+    v10 = core::convert::num::_$LT$impl$u20$core..convert..From$LT$u8$GT$$u20$for$u20$u16$GT$::from::hda7b723be940bab0(mem.data_ptr[v96]);
+
+    v95 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h6d2b6e31b499c834(v10 + v97);
+    v131 = v95;
+
+    r.data_ptr[v99] = mem.data_ptr[v95];
+
+    return pc + 3;
+  }
+}
+else
+{
+  v103 = _$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$::into::h37e5c7bb5a1d8bc6(mem.data_ptr[pc] & 0xF); 
+  v128 = v103;
+  v102 = pc + 1;
+
+  v101 = mem.data_ptr[v102];
+  v129 = v101;
+
+  r.data_ptr[v103] = v101;
+
+  return pc + 2;
+}
