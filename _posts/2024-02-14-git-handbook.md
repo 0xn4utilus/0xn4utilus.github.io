@@ -77,3 +77,12 @@ git fetch origin
 git branch -v -a
 git reset --hard <remote>/<branch>
 ```
+
+How do I check out a remote Git branch?
+
+```bash
+# create a new branch of name test
+git fetch origin
+git branch -v -a
+git switch -c test origin/test
+```
