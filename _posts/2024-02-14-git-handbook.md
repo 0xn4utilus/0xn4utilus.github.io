@@ -86,3 +86,11 @@ git fetch origin
 git branch -v -a
 git switch -c test origin/test
 ```
+
+Squash last `n` commits into single commit
+
+```bash
+# squash last 2 commits into single commit
+git reset --soft HEAD~2
+git commit
+```
