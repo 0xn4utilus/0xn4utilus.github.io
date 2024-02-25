@@ -94,3 +94,18 @@ Squash last `n` commits into single commit
 git reset --soft HEAD~2
 git commit
 ```
+
+Edit a previous commit[here](https://stackoverflow.com/questions/1186535/how-do-i-modify-a-specific-commit).
+
+```bash
+# suppose you want to edit commit `bbc643cd`
+# ~ at the last is important
+git rebase --interactive bbc643cd~
+
+# change `pick` to `edit` of bbc643cd
+
+# ammend your commit
+git commit --all --amend 
+
+git rebase --continue
+```
