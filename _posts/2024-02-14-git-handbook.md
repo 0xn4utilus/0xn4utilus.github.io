@@ -109,3 +109,12 @@ git commit --all --amend
 
 git rebase --continue
 ```
+
+Change the Windows CRLF to Unix LF
+```bash
+git config --global core.autocrlf false
+
+git rm --cached -r .
+
+git reset --hard
+```
